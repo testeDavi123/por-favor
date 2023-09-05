@@ -82,7 +82,7 @@
     let btnTroca = document.getElementById("botao");
 
     function mudarLugar() {
-        if(paraTexto.innerHTML == "Hoje tem 😎" || paraTexto.innerHTML == "Já era, sem volta 😎"){
+        if(paraTexto.innerHTML == "Hoje tem 😎" || paraTexto.innerHTML == "Já era, sem volta 😎" || paraTexto.innerHTML == "Oloco quer mais? 😎" || paraTexto.innerHTML == "Calma bebela 😎" || paraTexto.innerHTML == "Cansei de mudar a frase, chega."){
             paraTexto.innerHTML = "Já era, sem volta 😎"
         }else{
             switch(textoRandom(6)) {
@@ -99,7 +99,7 @@
           paraTexto.innerHTML = "Trolei";
           break;
         case 4:
-          paraTexto.innerHTML = "Errou de novooo";
+          paraTexto.innerHTML = "Clica logo no sim vai";
           break;
         case 5:
           paraTexto.innerHTML = "Muito ruim";
@@ -114,11 +114,24 @@
       btnTroca.style.left = esq + "px";
       btnTroca.style.top = cima + "px";
     }
-
+    let numero = 0
+    
     function confirmar(){
-        if(paraTexto.innerHTML == "Hoje tem 😎" || paraTexto.innerHTML == "Já era, sem volta 😎" || paraTexto.innerHTML == "Oloco quer mais? 😎"){
+      numero +=1
+      let contador = `Vezes que você disse sim😎 ${numero}, cada vez é uma repetida`
+      if(numero > 10){
+          paraTexto.innerHTML = "Cansei de mudar a frase, chega."
+        }
+        else
+        if(paraTexto.innerHTML == "Hoje tem 😎" || paraTexto.innerHTML == "Já era, sem volta 😎"){
             paraTexto.innerHTML = "Oloco quer mais? 😎"
-        }else{
+        }else if(paraTexto.innerHTML == "Oloco quer mais? 😎"){
+          paraTexto.innerHTML = "Calma bebela 😎"
+        }else if(paraTexto.innerHTML == "Calma bebela 😎"){
+          paraTexto.innerHTML = contador
+        }
+        
+        else{
             alert("AAAAHHHH MULEQUE 😎😎😎😎😎😎😎 \n  CHAMA😎😎😎😎😎😎😎")
         paraTexto.innerHTML = "Hoje tem 😎"
         }
