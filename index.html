@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Por favor</title>
+  </head>
+  <style>
+    body {
+      display: flex;
+      width: 100%;
+      min-height: 100%;
+      background-color: red;
+    }
+    h1, p{
+        color: white;
+        font-weight: 900;
+    }
+    input{
+        background-color: rgb(255, 255, 255);
+        font-weight: 900;
+    }
+    #caixa {
+      width: 100%;
+      min-height: 100%;
+      
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      
+    }
+    #botao {
+      width: 100px;
+     
+      display: block;
+      
+      left: 20px;
+      top: 50px;
+      border-radius: 15px;
+      height: 30px;
+    }
+    #confirmar {
+        margin-top: 20px;
+      width: 100px;
+      height: 30px;
+      border-radius: 15px;
+    }
+    body {
+      width: 100%;
+    }
+  </style>
+  <body>
+    <div id="caixa">
+        <h1>CU HOJE?</h1>
+      <p id="texto">Por favorzinho</p>
+        <img src="figurinha.jpg" alt="cu hoje?">
+      <input
+        type="button"
+        id="botao"
+        value="Não"
+        onclick="mudarLugar()"
+      />
+
+      <input
+        type="button"
+        id="confirmar"
+        value="Sim"
+        onclick="confirmar()"
+      />
+    </div>
+  </body>
+
+  <script>
+    function textoRandom(max) {
+      return Math.floor(Math.random() * max);
+    }
+
+    let caixote = document.getElementById("caixa");
+
+    let paraTexto = document.getElementById("texto");
+
+    let btnTroca = document.getElementById("botao");
+
+    function mudarLugar() {
+        if(paraTexto.innerHTML == "Hoje tem 😎" || paraTexto.innerHTML == "Já era, sem volta 😎"){
+            paraTexto.innerHTML = "Já era, sem volta 😎"
+        }else{
+            switch(textoRandom(6)) {
+        case 0:
+          paraTexto.innerHTML = "Epa";
+          break;
+        case 1:
+          paraTexto.innerHTML = "Por favor 🥺🥺🥺🥺🥺";
+          break;
+        case 2:
+          paraTexto.innerHTML = "Errou de novo";
+          break;
+        case 3:
+          paraTexto.innerHTML = "Trolei";
+          break;
+        case 4:
+          paraTexto.innerHTML = "Errou de novooo";
+          break;
+        case 5:
+          paraTexto.innerHTML = "Muito ruim";
+          break;
+      }
+        }
+
+
+      let esq = Math.floor(Math.random() * 500) + 1;
+      let cima = Math.floor(Math.random() * 500) + 1;
+      btnTroca.style.position = "absolute"
+      btnTroca.style.left = esq + "px";
+      btnTroca.style.top = cima + "px";
+    }
+
+    function confirmar(){
+        if(paraTexto.innerHTML == "Hoje tem 😎" || paraTexto.innerHTML == "Já era, sem volta 😎" || paraTexto.innerHTML == "Oloco quer mais? 😎"){
+            paraTexto.innerHTML = "Oloco quer mais? 😎"
+        }else{
+            alert("AAAAHHHH MULEQUE 😎😎😎😎😎😎😎 \n  CHAMA😎😎😎😎😎😎😎")
+        paraTexto.innerHTML = "Hoje tem 😎"
+        }
+
+    }
+
+  </script>
+</html>
